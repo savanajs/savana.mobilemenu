@@ -1,0 +1,271 @@
+/*
+Savana Menu Mobile
+Created By Rafael Cruz
+Contact: projetosavanajs@gmail.com
+Version: 0.0.1
+Release: 08/02/2016
+Framework JavaScript
+Brazil, São Paulo
+*/
+
+/*
+The MIT License (MIT)
+Copyright (c) 2016 Savana JS
+......................................................................................................
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
+and associated documentation files (the "Software"), to deal in the Software without restriction, 
+including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
+subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial 
+portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT 
+LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+.sjs-btn-menu span:before,
+.sjs-btn-menu span:after {
+    background: #fff;
+}
+
+.sjs-btn-menu span{
+    border-top: 3px solid #fff;
+}
+
+/* Close */
+.sjs-btn-menu.active span:before,
+.sjs-btn-menu.active span:after {
+    background: #e70000;
+}
+
+.sjs-btn-menu {
+    display: inline-block;
+    height: 9px;
+    padding-top: 9px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: none;
+}
+
+.sjs-btn-menu span {
+    position: relative;
+    display: block;
+    width: 25px;
+    height: 15px;
+}
+
+.sjs-btn-menu span:before,
+.sjs-btn-menu span:after {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    content: '';
+}
+
+.sjs-btn-menu span:before {
+    top: -9px;
+}
+
+.sjs-btn-menu span:after {
+    top: 3px;
+}
+
+.sjs-btn-menu span:before,
+.sjs-btn-menu span:after,
+.sjs-btn-menu span {
+    transition: all .3s linear;
+}
+
+.sjs-btn-menu.active span {
+    border-color: transparent;
+}
+
+.sjs-btn-menu.active span:before {
+    -webkit-transform: rotate(45deg) translate(2.5px, 6px);
+    -ms-transform: rotate(45deg) translate(2.5px, 6px);
+    transform: rotate(45deg) translate(2.5px, 6px);
+}
+
+.sjs-btn-menu.active span:after {
+    -webkit-transform: rotate(-45deg) translate(2.5px, -6px);
+    -ms-transform: rotate(-45deg) translate(2.5px, -6px);
+    transform: rotate(-45deg) translate(2.5px, -6px);
+}
+
+.sjs-content-menu *{
+    font-size: 14px;
+}
+
+.sjs-content-menu {
+    width:80%;
+    background: #f5f5f5;
+    border-sizing: border-box;
+    position: fixed;
+    z-index: 9999;
+    height: 100%;
+    overflow-y: auto;
+    box-shadow: -5px 0px 5px rgba(0,0,0,.5) inset;
+    -moz-box-shadow: -5px 0px 5px rgba(0,0,0,.5) inset;
+    -webkit-box-shadow: -5px 0px 5px rgba(0,0,0,.1) inset;
+    top: 0px;
+    left: 0px;
+    display: none;
+}
+
+.sjs-content-menu h5 {
+    margin: 0px;
+    border-bottom: 1px solid #000;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+    font-weight: bold;
+    background: #000;
+}
+
+.sjs-content-menu h5 > p{
+    margin: 0px;
+    text-align: left
+}
+
+.sjs-content-menu h5 > p > a{
+    color: #fff;
+}
+
+.sjs-content-menu ul {
+    list-style: none;
+}
+
+.sjs-content-menu ul > li{
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    margin: 0px;
+    position: relative;
+}
+
+.sjs-content-menu ul > li a,
+.sjs-content-menu ul > li{
+    color: #333;
+    text-decoration: none
+} 
+
+.sjs-content-menu ul > li > ul{
+    display: none;
+}
+
+.sjs-content-menu ul > li *{
+    margin: 0px;
+    padding: 0px;
+}
+
+.sjs-content-menu ul > li:hover{
+   background: rgba(255,255,255,.3);
+}
+
+.sjs-content-menu ul > li > .sjs-open-subitem{
+   position: absolute;
+   right: 0px;
+   top: 0px;
+   font-size: 20px;
+   font-weight: bold;
+   padding: 5px 15px;
+   cursor: pointer;
+}
+
+.sjs-n2{z-index: 9999;}
+.sjs-n2{z-index: 99999;}
+.sjs-n3{z-index: 999999;}
+.sjs-n4{z-index: 9999999;}
+
+li.menu-current{
+    background: rgba(255,255,255,.8);
+}
+
+.sjs-btns{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index:9999;
+    background: #f5f5f5;
+    display: none;
+}
+
+.sjs-btns a{
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+}
+
+.sjs-btns a.sjs-aside-nav{background: #000}
+.sjs-btns a.sjs-aside-filter{background: #999}
+
+.sjs-btns a:hover, .sjs-btns a.active{
+    opacity: .80;
+    -moz-opacity: .80;
+    -webkit-opacity: .80;
+}
+
+.make-all-aside {
+    width:100%!important;
+    background: #fff;
+    border-sizing: border-box;
+    position: fixed;
+    z-index: 9999;
+    height: 100%;
+    overflow-y: auto;
+    box-shadow: -5px 0px 5px rgba(0,0,0,.5) inset;
+    -moz-box-shadow: -5px 0px 5px rgba(0,0,0,.5) inset;
+    -webkit-box-shadow: -5px 0px 5px rgba(0,0,0,.1) inset;
+    top: 0px;
+    left: 0px;
+    display: none;
+    cursor: pointer;
+    background: #f5f5f5;
+}
+
+.make-all-aside .header-aside p{
+   margin: 0px;
+}
+
+.make-all-aside .header-aside:hover{
+    background: #e5e5e5;
+}
+
+.make-all-aside .header-aside p a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+    display: block;
+    width: 100%;
+    padding: 10px;
+}
+
+.make-all-aside .header-aside{
+   border-bottom: 1px solid #e5e5e5;
+   margin-bottom: 10px;
+}
+
+.make-all-aside.active-nav .make-filter{
+   display: none!important;
+}
+
+.make-all-aside.active-filter .make-nav{
+   display: none!important;
+}
+
+
+@media (max-width: 750px) {
+    .sjs-btn-menu, .sjs-btns{display: block;}
+}
