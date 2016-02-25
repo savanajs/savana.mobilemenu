@@ -243,6 +243,10 @@ li.menu-current {
     overflow-y: auto;
 }
 
+.sjs-main-menu {
+    display: block!important;
+}
+
 @media (max-width:750px) {
     .make-all-aside {
         width: 100% !important;
@@ -295,6 +299,10 @@ li.menu-current {
     .sjs-btn-menu,
     .sjs-btns {
         display: block;
+    }
+
+    .sjs-main-menu {
+        display: none!important;
     }
 
 }

@@ -19,7 +19,7 @@
   <![endif]-->
   
   <script src="lib/js/savana.js"></script> 
-  <script src="lib/js/savana.mobilemenu.js"></script> 
+  <script src="lib/js/savana.mobilemenu.min.js"></script> 
   <link rel="stylesheet" href="lib/css/savana.mobilemenu.css">
   <link rel="stylesheet" href="site.css">
   <script>
@@ -27,7 +27,9 @@
     $savana(document).done(function(e){
 
         $savana("body").mobilemenu({
-           msg: "Hello new world!"
+           classMenu: 'ul.menu-mobile-nivel-1', // Hide in Mobile
+           classMenuNivel1: 'ul.menu-mobile-nivel-1', // Identifier main menu
+           classMenuNivel2: 'ul.menu-mobile-nivel-2' // Primary identifier of the sub menu
         });
         
     });
@@ -49,7 +51,7 @@
       <nav>
           <div class="container">
             <div class="row">
-              <ul class="menu-mobile-nivel-1">
+              <ul class="menu-mobile-nivel-1 sjs-main-menu">
                   <li>
                     <a href="#menu1">Menu 1</a>
                     <div class="megamenu">
