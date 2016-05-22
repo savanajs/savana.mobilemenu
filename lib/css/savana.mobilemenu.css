@@ -147,6 +147,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     border-bottom: 1px solid #ccc;
     margin: 0px;
     position: relative;
+    display: block;
 }
 
 .sjs-content-menu ul > li a,
